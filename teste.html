@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de Teste</title>
+</head>
+
+<body>
+    <p>
+        <input type="text" name="" id="">
+    </p>
+
+    <p>
+        <button id="meuBotao">Clique aqui</button>
+    </p>
+
+    <p id="mensagem"></p>
+
+    <script>
+        var contador = 0;
+        var msg = document.getElementById("mensagem")
+        document.getElementById('meuBotao').addEventListener("click", function () {
+
+            contador++
+
+            if (contador === 1) {
+                msg.textContent = "Primeiro Clique!"
+            } else if (contador === 5) {
+                msg.textContent = "Você clicou 5 vezes!"
+            } else if (contador > 10) {
+                msg.textContent = "Chega de clicar!"
+            } else {
+                msg.textContent = `Cliques: ${contador}`
+            }
+
+        })    
+    </script>
+</body>
+
+</html>
+

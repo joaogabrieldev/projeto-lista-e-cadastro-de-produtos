@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagens/oak_tecnologia_logo.ico" type="image/x-icon">
+    <title>Projeto - Cadastro e Listagem de Produtos</title>
+    <style>
+        :root {
+            /* Paleta 1 - Imagem com Fundo Escuro e Texto Brano */
+            --cor1: #012326;
+            --cor2: #012623;
+            --cor3: #F0F2F2;
+            --cor4: #798C89;
+            --cor5: #C5D9D5;
+
+            /* Paleta 2 - Imagem com Fundo Branco e Texto Verde */
+
+            --cor6: #F2F2F2;
+            --cor7: #81A698;
+            --cor8: #025939;
+            --cor9: #01402E;
+            --cor10: #012623;
+
+        }
+
+        #valorProdutos::-webkit-inner-spin-button{
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+
+        }
+
+
+        table{
+            width: 500px;
+            border-collapse: collapse;   
+        }
+
+        th{
+           background-color: gray;
+           border: 1px solid black;
+           padding: 20px;
+           color: white; 
+        }
+    
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro e Listagem de Produtos</h1>
+    </header>
+
+    <main>
+        <p>
+            <h2>Adicione um produto:</h2>
+            <input type="text" name="" id="produtos">
+            
+        </p>
+
+        <p>
+            <h2>Valor do Produto:</h2>
+            
+            <input type="number" name="" id="valorProdutos">
+        </p>
+
+        <p>
+            <input type="button" value="Adicionar Produto!" id="btn1">
+        </p>
+
+
+        <p>
+        <div id="div-tabela">
+            <table id="tabela">
+                <!-- <thead>
+                    <tr>
+                        <th>
+                            PRODUTO
+                        </th>
+                        <th>
+                            VALOR
+                        </th>
+                    </tr>
+                </thead> -->
+            </table>
+        </div>
+        </p>
+
+        <script>
+            let produtos = document.getElementById("produtos")
+            let valor = document.getElementById("valorProdutos")
+            let tabela = document.getElementById("tabela")
+            let contador = 0;
+            let botao = 
+            document.getElementById('btn1').addEventListener("click", function () {
+                contador++
+
+                if (contador === 1) {
+                    tabela.innerHTML = 
+                    "<thead><tr><th>PRODUTO</th> <th>VALOR</th></tr></thead> "
+
+
+
+                }
+
+
+            })
+
+
+        </script>
+
+
+    </main>
+
+
+    <footer>
+        Criado por <a href="https://www.linkedin.com/in/joaogabrielrocha/">João Gabriel</a>
+    </footer>
+</body>
+
+</html>
