@@ -44,6 +44,15 @@
            padding: 20px;
            color: white; 
         }
+
+        td{
+            border: 1px solid black;
+            text-align: right;
+            padding: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+
+        }
     
     </style>
 </head>
@@ -83,27 +92,73 @@
                             VALOR
                         </th>
                     </tr>
-                </thead> -->
+                </thead>
+
+                <tbody id="tbody-main">
+                    <tr>
+                        <td>
+                            Produto 1
+                        </td>
+                        <td>
+                            Valor 1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Produto 2</td>
+                        <td>Valor 2</td>
+                    </tr>
+
+                       
+                </tbody>
+
+                 -->
             </table>
         </div>
         </p>
 
         <script>
+            // Variáveis de Controle
+            let contador = 0;
+            let acumuladorValor = 0
+            
+            // Elementos Resgatados do HTML
             let produtos = document.getElementById("produtos")
             let valor = document.getElementById("valorProdutos")
             let tabela = document.getElementById("tabela")
-            let contador = 0;
-            let botao = 
+            let botao = document.getElementById('btn1')
+            let tbody = document.getElementById('tbody-main')
+
+            // Função
             document.getElementById('btn1').addEventListener("click", function () {
-                contador++
-
-                if (contador === 1) {
-                    tabela.innerHTML = 
-                    "<thead><tr><th>PRODUTO</th> <th>VALOR</th></tr></thead> "
-
+                 
+                // Definição dos Erros
+                if (produtos.length == 0) {
+                    window.alert ('[ERRO] Informe o Nome do Produto')
+                
+                } else if (valor.length == 0 || valor.value == 0) {
+                    window.alert ('[ERRO] Informe o Valor do Produto')
+                } 
+                
+                // Agora Sim, às condições
+                else {      
+                    contador++                
+                     if (contador === 1){
+                        tabela.innerHTML =
+                            `<thead><tr><th>PRODUTO</th> <th>VALOR</th></tr></thead> <tbody><tr><td>${produtos.value}</td><td>${valor.value}</td></tr></tbody>`
+                        
+                        botao.value = "Adicionar Novo Produto!"
+                    } 
+                    
+                    else if(contador > 1){
+                       // Quando voltar da faculdade, criar outro o elemento tbody
+                        tbody.innerHTML = `<tr><td>${produtos.value}</td><td>${valor.value}</td></tr>`
+                    
+                    }
 
 
                 }
+                
+               
 
 
             })
