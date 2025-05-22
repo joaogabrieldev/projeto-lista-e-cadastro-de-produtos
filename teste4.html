@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste 4</title>
+</head>
+<body>
+    <p>
+        <input type="number" name="" id="valorUser">
+    </p>
+
+    <input type="button" value="GUARDAR VALOR" id="btn1">
+
+    <p>
+        <div id="mensagem"></div>
+    </p>
+
+    <script>
+        const valor = document.getElementById('valorUser')
+        const mensagem = document.getElementById('mensagem')
+        let acumuladorValor = 0
+        
+        const btn = document.getElementById('btn1').addEventListener('click', function() {
+            const valorAtual = Number(valor.value)
+            
+            acumuladorValor = acumuladorValor + valorAtual
+
+            mensagem.textContent = `Valor Acumulado: ${acumuladorValor}`
+           
+        })
+
+    </script>
+</body>
+</html>
