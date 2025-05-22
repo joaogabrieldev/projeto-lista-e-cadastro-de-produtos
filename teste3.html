@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Teste 3</title>
 </head>
 <body>
-    
+    <p>
+        Valor: <input type="number" name="" id="valor">
+    </p>
+
+    <input type="button" value="CLICA!" id="btn1">
+
+    <table id="tabela"><tr></tr></table>
+
+    <script>
+        const array = []
+        let contador = 0
+        const valor = document.getElementById('valor')
+        const tabela = document.getElementById('tabela')
+        document.getElementById('btn1').addEventListener('click', function() {
+            contador++
+            if (contador == 1){
+                array.push(valor)
+                tabela.innerHTML = `<tr>${array.value}</tr>` 
+
+
+            }
+
+
+
+
+        })
+
+
+
+
+
+
+      
+    </script>
+
 </body>
 </html>

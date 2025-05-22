@@ -1,3 +1,6 @@
+
+/*
+
 var produtos = [
   { nome: "Mouse", valor: 50 },
   { nome: "Teclado", valor: 150 },
@@ -10,16 +13,8 @@ produtos.sort(function (a, b) {
 
 console.log(produtos);
 
-/*
-
-
 
       
 
-
-
-
-
-
-
 */
+
