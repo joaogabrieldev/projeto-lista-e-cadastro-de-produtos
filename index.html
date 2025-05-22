@@ -150,18 +150,19 @@
             const nome = document.getElementById("produtos")
             const descricao = document.getElementById('descricao')
             const disponivel = document.getElementsByName('radios')
-            let valor = Number(document.getElementById("valorProdutos").value)
             const quantidade = document.getElementById('quantidadeProdutos')
             const quantidadeReal = Number(quantidade.value)
             let tabela = document.getElementById("tabela")
             let botao = document.getElementById('btn1')
             const formatarMoeda = new Intl.NumberFormat('pt-BR', {style: "currency", currency: 'BRL'})
-            let valorFormatado = formatarMoeda.format(valor)
+            
         
             // Função
             document.getElementById('btn1').addEventListener("click", function () {
-            
                 
+                const valor = Number(document.getElementById("valorProdutos").value)
+                
+                const valorFormatado = formatarMoeda.format(valor) 
                 
                 // Definição dos Erros
                 if (nome.value.length == 0) {
@@ -179,7 +180,7 @@
                 // Agora Sim, às condições
                 else {      
                     contador++                
-                           
+                          
                     if (contador === 1){
                         if (disponivel[0].checked == true){
                             tabela.innerHTML =
