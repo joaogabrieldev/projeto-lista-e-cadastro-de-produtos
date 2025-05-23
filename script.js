@@ -170,6 +170,18 @@ function apagarLinha() {
   tbody.deleteRow(-1);
   acumuladorValor = acumuladorValor - valor;
   contador--;
+  if (contador == 0){
+    tabelaFinalizar.style.display = 'none'
+
+  } else if (contador < 0){
+    Swal.fire({
+      icon: "error",
+      title: "Calma lá...",
+      text: 'Não Há Mais Linhas para Apagar!',
+    });
+
+
+  }
 }
 
 // Apagar a Linha

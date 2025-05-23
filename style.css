@@ -1,0 +1,207 @@
+@charset "UTF-8";
+
+@font-face{
+    font-family: "Rodiopen";
+    src: url(fonts/rodiopen.otf) format("opentype");
+
+}
+
+@font-face {
+    font-family: "Taffy";
+    src: url(fonts/taffy-truetype.ttf) format("truetype");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sriracha&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Bebas+Neue&family=Fredoka:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sriracha&display=swap');
+
+
+:root {
+  /* Paleta 1 - Imagem com Fundo Escuro e Texto Brano */
+  --cor1: #012326;
+  --cor2: #012623;
+  --cor3: #f0f2f2;
+  --cor4: #798c89;
+  --cor5: #c5d9d5;
+
+  /* Paleta 2 - Imagem com Fundo Branco e Texto Verde */
+
+  --cor6: #f2f2f2;
+  --cor7: #81a698;
+  --cor8: #025939;
+  --cor9: #01402e;
+  --cor10: #012623;
+  --cor11: #3EAE85;
+
+
+  /* Fontes */
+
+  --font1: "Rodiopen", sans-serif;
+  --font2: "Taffy", sans-serif;
+    --font3: "Fredoka", sans-serif;
+    --font4: "Baloo 2", sans-serif;
+}
+
+
+/* Configurações Universais */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+html,
+body {
+  min-width: 100%;
+  background-image: linear-gradient(to right, #ffffff 34%, #F5F5F5 75%);
+}
+
+/* Configurações - Header */
+
+header {
+  background-image: linear-gradient(to right, #ffffff 34%, #F5F5F5 75%);
+  color: white;
+  text-align: center;
+  padding: 30px;
+  background-attachment: fixed;
+}
+
+header h1 {
+  font-size: 75px;
+  font-family: var(--font1);
+  margin: auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #025939 40%, #36806a 44.7%);
+  
+}
+
+header p{
+    margin: auto;
+    font-size: 16.15px;
+    width: 215px;
+    text-align: right;
+    padding: 0px;
+    margin-top: -6px;
+    color: var(--cor8);
+
+}
+
+/* Main */
+
+main{
+    padding: 50px;
+    background-image: linear-gradient(to right, var(--cor8), var(--cor11));
+    color: white;
+    
+}
+
+/* Adicione um Produto */
+#div-produto{
+    text-align: center;
+    
+}
+
+#h2-divProdutos{
+    font-family: var(--font3);
+    padding-bottom: 8px;
+
+}
+
+#produtos{
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
+    width: 200px;
+    height: 20px;
+    font-size: 20px;
+    background-color: transparent;
+    /* text-align: center; */
+    color: white;
+    
+
+}
+
+#produtos:focus{
+    outline: none;
+    background-color: white;
+    color: #3EAE85;
+    font-weight: bolder;
+    
+}
+
+
+
+
+/* Descrição do Produto */
+#descricao {
+    width: 300px;
+    height: 100px;
+    resize: none;
+    cursor: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+  
+#descricao:focus {
+  border-style: normal;
+  }
+
+  
+/* Valor do Produto */
+#valorProdutos::-webkit-inner-spin-button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+#quantidadeProdutos::-webkit-inner-spin-button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+table {
+  width: 500px;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: gray;
+  border: 1px solid black;
+  padding: 20px;
+  color: white;
+}
+
+td {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  text-align: right;
+  padding: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+
+
+/* Footer */
+
+footer{
+    text-align: center;
+    background-attachment: fixed;
+    background-image: linear-gradient(to right, #ffffff 34%, #F5F5F5 75%);
+    
+    /* Para fixar o rodapé no fim da pagina */
+    position: fixed;
+    bottom:0%;
+    width: 100%;
+
+
+}

@@ -6,115 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.21.2/dist/sweetalert2.min.css">
     <link rel="shortcut icon" href="imagens/oak_tecnologia_logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <title>Projeto - Cadastro e Listagem de Produtos</title>
-    <style>
-        :root {
-            /* Paleta 1 - Imagem com Fundo Escuro e Texto Brano */
-            --cor1: #012326;
-            --cor2: #012623;
-            --cor3: #F0F2F2;
-            --cor4: #798C89;
-            --cor5: #C5D9D5;
-
-            /* Paleta 2 - Imagem com Fundo Branco e Texto Verde */
-
-            --cor6: #F2F2F2;
-            --cor7: #81A698;
-            --cor8: #025939;
-            --cor9: #01402E;
-            --cor10: #012623;
-
-        }
-
-        #valorProdutos::-webkit-inner-spin-button {
-            appearance: none;
-            -moz-appearance: none;
-            -webkit-appearance: none;
-
-        }
-
-
-        table {
-            width: 500px;
-            border-collapse: collapse;
-        }
-
-        th {
-            background-color: gray;
-            border: 1px solid black;
-            padding: 20px;
-            color: white;
-        }
-
-        td {
-            border: 1px solid black;
-            text-align: right;
-            padding: 15px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-
-        }
-
-        #descricao {
-            width: 300px;
-            height: 100px;
-            resize: none;
-            cursor: auto;
-            font-family: Arial, Helvetica, sans-serif;
-
-        }
-
-        #descricao:focus {
-            appearance: normal;
-
-
-        }
-
-    </style>
 </head>
 
 <body>
     <header>
-        <h1>Cadastro e Listagem de Produtos</h1>
+        <h1 id="h1-header">OAK</h1>
+    
+        <p>TECNOLOGIA</p>
     </header>
 
     <main>
-        <p>
-        <h2>Adicione um produto:</h2>
-        <input type="text" name="" id="produtos" required>
+        <div id="div-produto">
+            <h2 id="h2-divProdutos">Adicione um produto:</h2>
+            <input type="text" name="" id="produtos" required>
 
-        </p>
+        </div>
 
-        <p>
-        <h2>Descrição do Produto:</h2>
+        <div id="div-descricao">
+            <h2>Descrição do Produto:</h2>
 
         <!-- <input type="text" name="" id="descricao"> -->
-        <textarea name="" id="descricao" placeholder="Adicione o seu comentário aqui" ></textarea>
-        </p>
+            <textarea name="" id="descricao" placeholder="Adicione o seu comentário aqui" ></textarea>
+        </div>
 
-        <p>
-        <h2>Valor do Produto:</h2>
+        <div id="div-valorProduto">
+            <h2>Valor do Produto:</h2>
 
-        <input type="number" name="" id="valorProdutos" required>
-        </p>
+            <input type="number" name="" id="valorProdutos" required>
+        </div>
 
-        <p>
-        <h2>Quantidade:</h2>
+        <div id="div-quantidade">
+            <h2>Quantidade:</h2>
 
-        <input type="number" name="" id="quantidadeProdutos">
-        </p>
+            <input type="number" name="" id="quantidadeProdutos">
+        </div>
 
-        <p>
+        <div id="div-Disponivel">
         <h2>Disponível para Venda? </h2>
 
         <span>Sim<input type="radio" name="radios" id="radio1" value="Sim"></span>
 
         <span><input type="radio" name="radios" id="radio2" value="Não">Não</span>
-        </p>
+        </div>
 
-        <p>
+        <div id="div-botaoCriarTabela" >
             <input type="button" value="Criar Tabela e Adicionar Produto!" id="botaoAdicionar">
-        </p>
+        </div>
 
         <div id="div-tabela">
             <table id="tabela">
@@ -122,14 +61,14 @@
             </table>
         </div>
 
-        <p id="p-reset">
+        <div id="div-Botoes3Opcoes">
             <input type="button" value="Apagar Linha!" id="apagarLinha" onclick="apagarLinha()" style="display: none;">
 
             <p><input type="button" value="Limpar Tabela!" id="botaoreset" onclick="resetar()" style="display: none;"></p>
 
             <p><input type="button" value="Finalizar Tabela" style="display: none;" 
             id="tabela-finalizar" onclick="finalizarTabela()"></p>
-        </p>
+        </div>
   
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.21.2/dist/sweetalert2.all.min.js"></script>
 
@@ -140,8 +79,8 @@
 
 
     <footer>
-        Criado por <a href="https://www.linkedin.com/in/joaogabrielrocha/">João Gabriel</a> para <a
-            href="https://www.oaktecnologia.com/">OAK Tecnologia</a>
+        Criado por <a href="https://www.linkedin.com/in/joaogabrielrocha/" target="_blank">João Gabriel</a> para <a
+            href="https://www.oaktecnologia.com/" target="_blank">OAK Tecnologia</a>
     </footer>
 </body>
 
