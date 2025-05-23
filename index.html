@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.21.2/dist/sweetalert2.min.css">
     <link rel="shortcut icon" href="imagens/oak_tecnologia_logo.ico" type="image/x-icon">
     <title>Projeto - Cadastro e Listagem de Produtos</title>
     <style>
@@ -53,6 +54,22 @@
             font-weight: bold;
 
         }
+
+        #descricao {
+            width: 300px;
+            height: 100px;
+            resize: none;
+            cursor: auto;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        #descricao:focus {
+            appearance: normal;
+
+
+        }
+
     </style>
 </head>
 
@@ -71,7 +88,8 @@
         <p>
         <h2>Descrição do Produto:</h2>
 
-        <input type="text" name="" id="descricao">
+        <!-- <input type="text" name="" id="descricao"> -->
+        <textarea name="" id="descricao" placeholder="Adicione o seu comentário aqui" ></textarea>
         </p>
 
         <p>
@@ -91,216 +109,39 @@
 
         <span>Sim<input type="radio" name="radios" id="radio1" value="Sim"></span>
 
-        <span>Não<input type="radio" name="radios" id="radio2" value="Não"></span>
+        <span><input type="radio" name="radios" id="radio2" value="Não">Não</span>
         </p>
 
-
-
         <p>
-            <input type="button" value="Adicionar Produto!" id="btn1">
+            <input type="button" value="Criar Tabela e Adicionar Produto!" id="botaoAdicionar">
         </p>
 
         <div id="div-tabela">
             <table id="tabela">
-                <!-- <thead>
-                    <tr>
-                        <th>
-                            PRODUTO
-                        </th>
-                        <th>
-                            VALOR
-                        </th>
-                    </tr>
-                </thead>
-
-                <tbody id="tbody-main">
-                    <tr>
-                        <td>
-                            Produto 1
-                        </td>
-                        <td>
-                            Valor 1
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Produto 2</td>
-                        <td>Valor 2</td>
-                    </tr>
-
-                       
-                </tbody>
-
-                 -->
 
             </table>
         </div>
 
         <p id="p-reset">
-            <input type="button" value="Apagar Linha!"  id="apagarLinha" onclick="apagarLinha()" style="display: non;">
-            
-            <input type="button" value="Limpar Tabela!" id="botaoreset" onclick="resetar()" style="display: non;">
+            <input type="button" value="Apagar Linha!" id="apagarLinha" onclick="apagarLinha()" style="display: none;">
 
-            <input type="button" value="Finalizar Tabela">
+            <p><input type="button" value="Limpar Tabela!" id="botaoreset" onclick="resetar()" style="display: none;"></p>
+
+            <p><input type="button" value="Finalizar Tabela" style="display: none;" 
+            id="tabela-finalizar" onclick="finalizarTabela()"></p>
         </p>
+  
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.21.2/dist/sweetalert2.all.min.js"></script>
 
-        <!-- <script src="script.js"></script> -->
-        <script>
-            // Variáveis de Controle
-            let contador = 0;
-            let acumuladorValor = 0;
+        <script src="script.js"></script>
 
-            // Elementos Resgatados do HTML
-            const nome = document.getElementById("produtos");
-            const descricao = document.getElementById("descricao");
-            const disponivel = document.getElementsByName("radios");
-            const quantidade = document.getElementById("quantidadeProdutos");
-            const quantidadeReal = Number(quantidade.value);
-            let tabela = document.getElementById("tabela");
-            let botao = document.getElementById("btn1");
-            const botaoApagarLinha = document.getElementById('apagarLinha')
-            const spanDivisora = document.getElementById('divisorBotoes1')
-            const botaoreset = document.getElementById("botaoreset");
-            
-            const formatarMoeda = new Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-            });
-
-            // Função
-            document.getElementById("btn1").addEventListener("click", function () {
-                const valor = Number(document.getElementById("valorProdutos").value);
-
-                const valorFormatado = formatarMoeda.format(valor);
-
-                // Definição dos Erros
-                if (nome.value.length == 0) {
-                    window.alert("[ERRO] Informe o Nome do Produto");
-                } else if (valor.length == 0 || valor.value == 0) {
-                    window.alert("[ERRO] Informe o Valor do Produto");
-                } else if (disponivel[0].checked == false && disponivel[1].checked == false) {
-                    window.alert(
-                        "[ERRO] Informe se o Produto está Disponível ou Não para Venda"
-                    );
-                } else if (quantidade.value == 0) {
-                    window.alert("Produto Esgostado");
-                }
-
-                // Agora Sim, às condições
-                else {
-                    contador++;
-
-                    if (contador === 1) {
-                        botaoApagarLinha.style.display = 'block'
-
-                        if (disponivel[0].checked == true) {
-                            tabela.innerHTML = `<thead>
-                    <tr>
-                        <th>PRODUTO</th> 
-                        <th>VALOR</th>
-                        <th>DESCRIÇÃO DO PRODUTO</th>
-                        <th>QUANTIDADE</th>
-                        <th>DISPONÍVEL PARA VENDA?</th>  
-                    </tr>
-                </thead> 
-                 
-                <tbody id="tbody-main">
-                    <tr>
-                        <td>${nome.value}</td>
-                        <td>${valorFormatado}</td>
-                        <td>${descricao.value}</td>                       
-                        <td>${quantidade.value}</td>
-                        <td>Sim</td>   
-                    </tr>
-                </tbody>`;
-                        } else if (disponivel[1].checked == true) {
-                            tabela.innerHTML = `<thead>
-                    <tr>
-                        <th>PRODUTO</th> 
-                        <th>VALOR</th>
-                        <th>DESCRIÇÃO DO PRODUTO</th>
-                        <th>QUANTIDADE</th>
-                        <th>DISPONÍVEL PARA VENDA?</th>
-                    </tr>
-                </thead> 
-                 
-                 <tbody id="tbody-main">
-                     <tr>
-                         <td>${nome.value}</td>
-                         <td>${valorFormatado}</td>
-                         <td>${descricao.value}</td>                       
-                         <td>${quantidade.value}</td>
-                         <td>Não</td>
-                         
-                     </tr>
-                 </tbody>`;
-                        }
-
-                        botao.value = "Adicionar Novo Produto!";
-
-                        acumuladorValor = acumuladorValor + valor
-                    } else if (contador > 1) {
-                        // Quando voltar da faculdade, criar outro o elemento tbody e dar um jeito de adicionalo dentro da tabela
-                        let tbody = document.getElementById("tbody-main");
-
-            if (disponivel[0].checked == true) {
-                tbody.innerHTML +=
-                                `<tr>
-                <td>${nome.value}</td>
-                <td>${valorFormatado}</td>
-                <td>${descricao.value}</td>                       
-                <td>${quantidade.value}</td>
-                <td>Sim</td>
-                     
-            </tr>`;
-
-            if (contador >= 5) {
-                botaoreset.style.display = "block";
-                }
-            
-            } else if (disponivel[1].checked == true) {
-                            tbody.innerHTML +=
-                                `<tr>
-            <td>${nome.value}</td>
-            <td>${valorFormatado}</td>
-            <td>${descricao.value}</td>                       
-            <td>${quantidade.value}</td>
-            <td>Não</td>                               
-        </tr>`;
-
-            if (contador >= 5) {
-                botaoreset.style.display = "block";
-                            }
-                        }
-                    }
-                }
-            });
-
-            function resetar() {
-                tabela.innerHTML =
-                    `<thead>
-        <tr>
-            <th>PRODUTO</th> 
-            <th>VALOR</th>
-            <th>DESCRIÇÃO DO PRODUTO</th>
-            <th>QUANTIDADE</th>
-            <th>DISPONÍVEL PARA VENDA?</th>                    
-        </tr>
-    </thead>`;
-            }
-            // Apagar a Linha
-            function apagarLinha(){
-                let tbody = document.g
-                let tabledata = tablerow.children
-                tbody -= tabledata[contador]
-
-            }
-        </script>
 
     </main>
 
 
     <footer>
-        Criado por <a href="https://www.linkedin.com/in/joaogabrielrocha/">João Gabriel</a>
+        Criado por <a href="https://www.linkedin.com/in/joaogabrielrocha/">João Gabriel</a> para <a
+            href="https://www.oaktecnologia.com/">OAK Tecnologia</a>
     </footer>
 </body>
 

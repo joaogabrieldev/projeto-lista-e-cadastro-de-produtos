@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste 5</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Linha 1</td>
+            <td><button onclick="apagarEstaLinha(this)">Apagar</button></td>
+        </tr>
+        <tr>
+            <td>Linha 2</td>
+            <td><button onclick="apagarEstaLinha(this)">Apagar</button></td>
+        </tr>
+    </table> 
+    
+    <script>
+        function apagarEstaLinha() {
+                // 1. botaoClicado é o botão que você apertou.
+                // 2. .closest('tr') encontra a "linha da tabela" (<tr>) mais próxima desse botão.
+                // 3. .remove() apaga essa linha.
+                botaoClicado.closest('tr').remove();
+            }
+    </script>
+</body>
+</html>
