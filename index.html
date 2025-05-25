@@ -46,9 +46,18 @@
         <div id="div-Disponivel">
         <h2>Disponível para Venda? </h2>
 
-        <span>Sim<input type="radio" name="radios" id="radio1" value="Sim"></span>
+        <span class="custom-radio1" id="span-radio1">
+            <label for="radio1" id="label-radio1">Sim</label>
+            <input type="radio" name="radios" id="radio1" value="Sim">
+        </span>
+        
+        <span id="span-divisao">null</span>
+        
+        <span class="custom-radio2" id="span-radio2">
+            <input type="radio" name="radios" id="radio2" value="Não">
+            <label for="radio2" id="label-radio2">Não</label>
+        </span>
 
-        <span><input type="radio" name="radios" id="radio2" value="Não">Não</span>
         </div>
 
         <div id="div-botaoCriarTabela" >
@@ -66,7 +75,7 @@
 
             <p><input type="button" value="Limpar Tabela!" id="botaoreset" onclick="resetar()" style="display: none;"></p>
 
-            <p><input type="button" value="Finalizar Tabela" style="display: none;" 
+            <p><input type="button" value="Finalizar Tabela!" style="display: none;" 
             id="tabela-finalizar" onclick="finalizarTabela()"></p>
         </div>
   

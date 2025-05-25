@@ -1,20 +1,22 @@
 @charset "UTF-8";
 
-@font-face{
-    font-family: "Rodiopen";
-    src: url(fonts/rodiopen.otf) format("opentype");
-
+@font-face {
+  font-family: "Rodiopen";
+  src: url(fonts/rodiopen.otf) format("opentype");
 }
 
 @font-face {
-    font-family: "Taffy";
-    src: url(fonts/taffy-truetype.ttf) format("truetype");
+  font-family: "Taffy";
+  src: url(fonts/taffy-truetype.ttf) format("truetype");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+TC&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Bebas+Neue&family=Fredoka:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sriracha&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
   /* Paleta 1 - Imagem com Fundo Escuro e Texto Brano */
@@ -31,17 +33,18 @@
   --cor8: #025939;
   --cor9: #01402e;
   --cor10: #012623;
-  --cor11: #3EAE85;
-
+  --cor11: #3eae85;
+  --cor12: #ad523e;
 
   /* Fontes */
 
   --font1: "Rodiopen", sans-serif;
   --font2: "Taffy", sans-serif;
-    --font3: "Fredoka", sans-serif;
-    --font4: "Baloo 2", sans-serif;
+  --font3: "Baloo 2", sans-serif;
+  --font4: "Outfit", sans-serif;
+  --font5: "WDXL", sans-serif;
+  --font6: "Funnel Sans", sans-serif;
 }
-
 
 /* Configurações Universais */
 
@@ -51,18 +54,19 @@
   font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
     sans-serif;
+    cursor: default;
 }
 
 html,
 body {
   min-width: 100%;
-  background-image: linear-gradient(to right, #ffffff 34%, #F5F5F5 75%);
+  background-image: linear-gradient(to right, #ffffff 34%, #f5f5f5 75%);
 }
 
 /* Configurações - Header */
 
 header {
-  background-image: linear-gradient(to right, #ffffff 34%, #F5F5F5 75%);
+  background-image: linear-gradient(to right, #ffffff 34%, #f5f5f5 75%);
   color: white;
   text-align: center;
   padding: 30px;
@@ -78,87 +82,190 @@ header h1 {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(to right, #025939 40%, #36806a 44.7%);
-  
 }
 
-header p{
-    margin: auto;
-    font-size: 16.15px;
-    width: 215px;
-    text-align: right;
-    padding: 0px;
-    margin-top: -6px;
-    color: var(--cor8);
-
+header p {
+  margin: auto;
+  font-size: 16.15px;
+  width: 215px;
+  text-align: right;
+  padding: 0px;
+  margin-top: -6px;
+  color: var(--cor8);
 }
 
 /* Main */
 
-main{
-    padding: 50px;
-    background-image: linear-gradient(to right, var(--cor8), var(--cor11));
-    color: white;
-    
+main {
+  padding: 50px;
+  background-image: linear-gradient(to right, var(--cor8), var(--cor11));
+  color: white;
 }
 
 /* Adicione um Produto */
-#div-produto{
-    text-align: center;
-    
+#div-produto {
+  text-align: center;
 }
 
-#h2-divProdutos{
-    font-family: var(--font3);
-    padding-bottom: 8px;
-
+#h2-divProdutos {
+  font-family: var(--font3);
+  padding-bottom: 8px;
+  font-weight: bolder;
 }
 
-#produtos{
-    padding: 10px;
-    border-radius: 10px;
-    border-style: solid;
-    border-color: white;
-    width: 200px;
-    height: 20px;
-    font-size: 20px;
-    background-color: transparent;
-    /* text-align: center; */
-    color: white;
-    
-
+#produtos {
+  padding: 10px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: white;
+  width: 200px;
+  height: 20px;
+  font-size: 20px;
+  background-color: transparent;
+  /* text-align: center; */
+  color: white;
+  transition: all 0.3s cubic-bezier(0.13, 0.62, 0.34, 0.88);
 }
 
-#produtos:focus{
-    outline: none;
-    background-color: white;
-    color: #3EAE85;
-    font-weight: bolder;
-    
+#produtos:focus {
+  outline: none;
+  background-color: white;
+  color: #3eae85;
+  font-weight: bolder;
+  transition: all 0.3s cubic-bezier(0.13, 0.62, 0.34, 0.88);
 }
 
-
-
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none;
+  background-color: transparent;
+  color: fieldtext;
+}
 
 /* Descrição do Produto */
+
+#div-descricao {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#div-descricao > h2 {
+  padding-bottom: 10px;
+}
+
 #descricao {
-    width: 300px;
-    height: 100px;
-    resize: none;
-    cursor: auto;
-    font-family: Arial, Helvetica, sans-serif;
-    
-  }
-  
+  width: 300px;
+  height: 100px;
+  padding: 5px;
+  resize: none;
+  cursor: auto;
+  font-family: var(--font5);
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.06, 0.48, 0.31, 0.9);
+  color: #3eae85;
+  font-size: 17px;
+}
+
+#descricao::-webkit-input-placeholder {
+  color: var(--cor11);
+  padding-left: 5px;
+}
+
+#descricao::-moz-placeholder {
+  color: var(--cor11);
+}
+
+#descricao::-ms-input-placeholder {
+  color: var(--cor11);
+}
+
+#descricao::placeholder {
+  color: var(--cor11);
+}
+
+
 #descricao:focus {
   border-style: normal;
-  }
+  padding: 15px;
+  border-radius: 15px;
+  outline: none;
+  transition: all 0.6s cubic-bezier(0.06, 0.48, 0.31, 0.9);
+  box-shadow: 0px 0px 48px -14px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 0px 0px 48px -14px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: 0px 0px 48px -14px rgba(255, 255, 255, 0.75);
+}
 
-  
 /* Valor do Produto */
+
+#div-valorProduto {
+  text-align: center;
+  padding-top: 10px;
+}
+
+#div-valorProduto > h2 {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+#valorProdutos {
+  padding: 10px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: white;
+  width: 200px;
+  height: 20px;
+  font-size: 20px;
+  background-color: transparent;
+  /* text-align: center; */
+  color: white;
+  transition: all 0.3s cubic-bezier(0.13, 0.62, 0.34, 0.88);
+}
+
+#valorProdutos:focus {
+  outline: none;
+  background-color: white;
+  color: #3eae85;
+  font-weight: bolder;
+  transition: all 0.3s cubic-bezier(0.13, 0.62, 0.34, 0.88);
+}
+
 #valorProdutos::-webkit-inner-spin-button {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
+}
+
+/* Quantidade de Produtos */
+
+#div-quantidade {
+  text-align: center;
+  padding-top: 15px;
+}
+
+#div-quantidade > h2 {
+  padding-bottom: 10px;
+}
+
+#quantidadeProdutos {
+  padding: 10px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: white;
+  width: 200px;
+  height: 20px;
+  font-size: 20px;
+  background-color: transparent;
+  /* text-align: center; */
+  color: white;
+  transition: all 0.3s cubic-bezier(0.13, 0.62, 0.34, 0.88);
+}
+
+#quantidadeProdutos:focus {
+  outline: none;
+  background-color: white;
+  color: #3eae85;
+  font-weight: bolder;
+  transition: all 0.3s cubic-bezier(0.13, 0.62, 0.34, 0.88);
 }
 
 #quantidadeProdutos::-webkit-inner-spin-button {
@@ -167,41 +274,223 @@ main{
   -webkit-appearance: none;
 }
 
+/* Disponivel para Venda */
+
+#div-Disponivel {
+  text-align: center;
+}
+
+#div-Disponivel > h2 {
+  padding-top: 15px;
+}
+
+input[type="radio"] {
+  margin-top: 20px;
+}
+
+#span-radio1 {
+  display: inline-block;
+}
+
+#span-divisao{
+
+  margin-left: 0px;
+  margin-right: 0px;
+  color: transparent;  
+
+}
+
+#span-radio2 {
+  display: inline-block;
+}
+
+#radio1 {
+  margin-left: 4px;
+  accent-color: var(--cor12);
+  width: 22px;
+  height: 22px;
+}
+
+#radio2 {
+  margin-right: 4px;
+  accent-color: var(--cor12);
+  width: 22px;
+  height: 22px;
+}
+
+#label-radio1 {
+  font-size: 30px;
+}
+
+#label-radio2 {
+  font-size: 30px;
+}
+
+/* Botão pra Criar a Tabela */
+
+#div-botaoCriarTabela {
+  text-align: center;
+
+}
+
+#botaoAdicionar{
+
+  margin-top: 25px;
+  margin-bottom: 15px;
+  padding: 15px;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 20px;
+  border-color: transparent;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.07, 0.65, 0.34, 0.95);
+  color: var(--cor11);
+}
+
+
+#botaoAdicionar:hover{
+
+  padding: 18px;
+  background-color: var(--cor12);
+  color: white;
+  font-weight: bold;
+  transition: all 0.2s cubic-bezier(0.07, 0.65, 0.34, 0.95);
+  cursor: grab;
+
+}
+
+#div-Botoes3Opcoes{
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#apagarLinha{
+
+  margin-right: 12px;
+  padding: 15px;
+  width: 200px;
+  font-weight: bold;
+  color: var(--cor11);
+  border-radius: 15px;
+  outline: none;
+  border-color: transparent;
+  font-size: 18px;
+  transition: all 0.2s cubic-bezier(0.07, 0.65, 0.34, 0.95);
+
+}
+
+#apagarLinha:hover{
+  background-color: var(--cor12);
+  color: white;
+  font-weight: bold;
+  cursor: grab;
+  
+}
+
+#botaoreset{
+  margin-right: 12px;
+  padding: 15px;
+  width: 200px;
+  font-weight: bold;
+  color: var(--cor11);
+  border-radius: 15px;
+  outline: none;
+  border-color: transparent;
+  font-size: 18px;
+  transition: all 0.2s cubic-bezier(0.07, 0.65, 0.34, 0.95);
+}
+
+#botaoreset:hover{
+  background-color: var(--cor12);
+  color: white;
+  font-weight: bold;
+  cursor: grab;
+  
+}
+
+#tabela-finalizar{
+  margin-right: 12px;
+  padding: 15px;
+  width: 200px;
+  font-weight: bold;
+  color: var(--cor11);
+  border-radius: 15px;
+  outline: none;
+  border-color: transparent;
+  font-size: 18px;
+  transition: all 0.2s cubic-bezier(0.07, 0.65, 0.34, 0.95);
+}
+
+#tabela-finalizar:hover{
+  background-color: var(--cor12);
+  color: white;
+  font-weight: bold;
+  cursor: grab;
+  
+}
+
+/* Tabelas */
+
+#div-tabela{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s cubic-bezier(0.07, 0.65, 0.34, 0.95);
+
+}
+
+
 table {
   width: 500px;
   border-collapse: collapse;
+
 }
 
 th {
-  background-color: gray;
+  background-color: white;
   border: 1px solid black;
   padding: 20px;
-  color: white;
+  color: var(--cor11);
+  font-family: var(--font5);
 }
 
 td {
   border: 1px solid black;
-  background-color: white;
-  color: black;
+  background-color: transparent;
+  color: white;
   text-align: right;
   padding: 15px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font6);
   font-weight: bold;
+
 }
-
-
 
 /* Footer */
 
-footer{
-    text-align: center;
-    background-attachment: fixed;
-    background-image: linear-gradient(to right, #ffffff 34%, #F5F5F5 75%);
-    
-    /* Para fixar o rodapé no fim da pagina */
-    position: fixed;
-    bottom:0%;
-    width: 100%;
+footer {
+  text-align: center;
+  background-attachment: fixed;
+  background-image: linear-gradient(to right, #ffffff 34%, #f5f5f5 75%);
 
+  /* Para fixar o rodapé no fim da pagina */
+  position: sticky;
+  padding: 20px;
+  cursor: default;
+}
+
+
+footer > a {
+
+  text-decoration: none;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #025939,#36806a); 
+  font-weight: bold;
+  cursor: pointer;
+  
 
 }
