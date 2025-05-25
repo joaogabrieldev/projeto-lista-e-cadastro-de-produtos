@@ -124,7 +124,8 @@ main {
   background-color: transparent;
   /* text-align: center; */
   color: white;
-  transition: all 0.3s cubic-bezier(0.13, 0.62, 0.34, 0.88);
+  transition: all 0.2s cubic-bezier(0.13, 0.62, 0.34, 0.88);
+  cursor: auto;
 }
 
 #produtos:focus {
@@ -132,7 +133,7 @@ main {
   background-color: white;
   color: #3eae85;
   font-weight: bolder;
-  transition: all 0.3s cubic-bezier(0.13, 0.62, 0.34, 0.88);
+  transition: all 0.2s cubic-bezier(0.13, 0.62, 0.34, 0.88);
 }
 
 input:-internal-autofill-selected {
@@ -164,6 +165,7 @@ input:-internal-autofill-selected {
   transition: all 0.3s cubic-bezier(0.06, 0.48, 0.31, 0.9);
   color: #3eae85;
   font-size: 17px;
+  border-color: transparent;
 }
 
 #descricao::-webkit-input-placeholder {
@@ -219,6 +221,7 @@ input:-internal-autofill-selected {
   /* text-align: center; */
   color: white;
   transition: all 0.3s cubic-bezier(0.13, 0.62, 0.34, 0.88);
+  cursor: auto;
 }
 
 #valorProdutos:focus {
@@ -258,6 +261,7 @@ input:-internal-autofill-selected {
   /* text-align: center; */
   color: white;
   transition: all 0.3s cubic-bezier(0.13, 0.62, 0.34, 0.88);
+  cursor: auto;
 }
 
 #quantidadeProdutos:focus {
