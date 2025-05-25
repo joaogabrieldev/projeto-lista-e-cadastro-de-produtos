@@ -179,6 +179,7 @@ function apagarLinha() {
       title: "Calma lá...",
       text: 'Não Há Mais Linhas para Apagar!',
     });
+    acumuladorValor = 0;
 
 
   }
