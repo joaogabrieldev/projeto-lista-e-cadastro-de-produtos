@@ -10,7 +10,7 @@ Bem-vindo ao projeto **Lista e Cadastro de Produtos**! Este sistema permite cada
 
 - **HTML5**
 - **CSS3** (com uso de variáveis, custom properties e fontes customizadas)
-- **JavaScript Vanilla**
+- **JavaScript**
 - **[SweetAlert2](https://sweetalert2.github.io/)** (para alertas e feedbacks visuais)
 - **Google Fonts** (fontes externas)
 
