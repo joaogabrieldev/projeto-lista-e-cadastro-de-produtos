@@ -42,10 +42,7 @@ Bem-vindo ao projeto **Lista e Cadastro de Produtos**! Este sistema permite cada
 
 ## 👨‍💻 Autor e Parceria
 
-Desenvolvido por [João Gabriel](https://www.linkedin.com/in/joaogabrielrocha/) para a [OAK Tecnologia](https://www.oaktecnologia.com/).
+Desenvolvido por [João Gabriel](https://www.linkedin.com/in/joaogabrielrocha/)
 
 ---
 
-## 📄 Licença
-
-Este projeto está licenciado sob a licença MIT.
