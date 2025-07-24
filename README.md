@@ -42,7 +42,6 @@ Bem-vindo ao projeto **Lista e Cadastro de Produtos**! Este sistema permite cada
 
 ## 👨‍💻 Autor e Parceria
 
-Desenvolvido por [João Gabriel](https://www.linkedin.com/in/joaogabrielrocha/)
+Desenvolvido por [João Gabriel](https://www.linkedin.com/in/joaogabrielrocha/) 
 
----
 
